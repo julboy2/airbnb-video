@@ -1,6 +1,6 @@
 https://www.youtube.com/watch?v=c_-b_isI4vg <br />
 youtube 에어비앤비 클론코딩 <br />
-17:00 
+24:00 
 <br />
 
 
