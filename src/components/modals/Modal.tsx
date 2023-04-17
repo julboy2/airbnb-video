@@ -17,7 +17,7 @@ type ModalProps = {
   secondaryActionLabel?: string
 }
 
-export default function Model({
+export default function Modal({
   isOpen,
   onClose,
   onSubmit,
