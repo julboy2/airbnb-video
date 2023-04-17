@@ -14,10 +14,13 @@ npx create-next-app@latest --experimental-app <br />
 - project named ? airbnb-video <br />
 nextjs 버전에서 자동으로 추가가 되지 않았다면 <br />
 yarn add -D tailwindcss postcss autoprefixer <br />
+<br /><br />
+
+### next-auth 페이지 참고해서 prisma  설치
+npx prisma init<br />
+https://authjs.dev/reference/adapter/prisma
 <br />
 prisma 설치후 <br />
-npx prisma init<br />
-yarn add @prisma/client<br />
 .env<br />
 DATABASE_URL="mongodb://localhost:27017/airbnb?authSource=admin"<br />
 model 만든후 동기화 <br />
