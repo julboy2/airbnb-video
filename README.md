@@ -4,6 +4,7 @@ youtube 에어비앤비 클론코딩 <br />
 <br />
 
 ### hydration error 현재버전의 (13) app 폴더가 재대로 동작하지 않는것 같음 <br />
+ClientOnly.tsx 파일로 감싸줄것<br />
 37:00 참고할것
 <br />
 <br />
