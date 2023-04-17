@@ -16,5 +16,9 @@ nextjs 버전에서 자동으로 추가가 되지 않았다면 <br />
 yarn add -D tailwindcss postcss autoprefixer <br />
 <br />
 prisma 설치후 <br />
-npx prisma init
-<br />
+npx prisma init<br />
+yarn add @prisma/client<br />
+.env<br />
+DATABASE_URL="mongodb://localhost:27017/airbnb?authSource=admin"<br />
+model 만든후 동기화 <br />
+npx prisma db push <br />
