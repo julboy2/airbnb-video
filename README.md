@@ -14,5 +14,7 @@ npx create-next-app@latest --experimental-app <br />
 - project named ? airbnb-video <br />
 nextjs 버전에서 자동으로 추가가 되지 않았다면 <br />
 yarn add -D tailwindcss postcss autoprefixer <br />
-
-<br /><br />
+<br />
+prisma 설치후 <br />
+npx prisma init
+<br />
