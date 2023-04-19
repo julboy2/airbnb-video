@@ -6,11 +6,11 @@ import Avatar from '../Avatar'
 import MenuItem from './MenuItem'
 import { useRegisterModal } from '@/hooks/useRegisterModal'
 import { useLoginModal } from '@/hooks/useLoginModal'
-import { User } from '@prisma/client'
 import { signOut } from 'next-auth/react'
+import { SafeUser } from '@/types'
 
 type Props = {
-  currentUser?: User | null
+  currentUser?: SafeUser | null
 }
 
 export default function UserMenu({ currentUser }: Props) {

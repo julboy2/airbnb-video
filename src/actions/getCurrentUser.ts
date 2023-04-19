@@ -24,7 +24,14 @@ export default async function getCurrentUser() {
       return null
     }
 
-    return currentUser
+    // 서버에서 불러오는 Date 값이 클라이언트 에서 불러오기때문에 hydration 에러가 나서 처리
+    //return currentUser
+    return {
+      ...currentUser,
+      createdAt: currentUser.createdAt.toISOString(),
+      updatedAt: currentUser.updatedAt.toISOString(),
+      emailVerified: currentUser.emailVerified?.toISOString() || null,
+    }
   } catch (error: any) {
     return null
   }
