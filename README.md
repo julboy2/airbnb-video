@@ -35,9 +35,9 @@ getCurrentUser.ts 파일에서 아래처럼 return 해준다.
 <br />
     return currentUser // 가 아니라 아래처럼 수정해준다.
     <br />
-    return {
-      ...currentUser,
-      createdAd: currentUser.createdAt.toISOString(),
-      updatedAd: currentUser.updatedAt.toISOString(),
-      emailVerified: currentUser.emailVerified?.toISOString(),
+    return { <br />
+      ...currentUser, <br />
+      createdAt: currentUser.createdAt.toISOString(), <br />
+      updatedAt: currentUser.updatedAt.toISOString(), <br />
+      emailVerified: currentUser.emailVerified?.toISOString(), <br />
     }
