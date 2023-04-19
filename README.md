@@ -25,3 +25,17 @@ prisma 설치후 <br />
 DATABASE_URL="mongodb://localhost:27017/airbnb?authSource=admin"<br />
 model 만든후 동기화 <br />
 npx prisma db push <br />
+
+
+## 참고
+- 해당 console 창의 경고는 서버데이터인 Date 필드가 가 client 에서 불러오기 때문에 경고가 난다. 
+![image](https://user-images.githubusercontent.com/6093105/233089039-46c92b0e-1fee-4587-94ca-7b5464562011.png)
+<br />
+    return currentUser // 가 아니라 아래처럼 수정해준다.
+    <br />
+    return {
+      ...currentUser,
+      createdAd: currentUser.createdAt.toISOString(),
+      updatedAd: currentUser.updatedAt.toISOString(),
+      emailVerified: currentUser.emailVerified?.toISOString(),
+    }
