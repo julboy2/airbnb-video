@@ -31,6 +31,8 @@ npx prisma db push <br />
 - 해당 console 창의 경고는 서버데이터인 Date 필드가 가 client 에서 불러오기 때문에 경고가 난다. 
 ![image](https://user-images.githubusercontent.com/6093105/233089039-46c92b0e-1fee-4587-94ca-7b5464562011.png)
 <br />
+getCurrentUser.ts 파일에서 아래처럼 return 해준다.
+<br />
     return currentUser // 가 아니라 아래처럼 수정해준다.
     <br />
     return {
