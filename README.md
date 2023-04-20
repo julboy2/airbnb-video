@@ -41,3 +41,6 @@ getCurrentUser.ts 파일에서 아래처럼 return 해준다.
       updatedAt: currentUser.updatedAt.toISOString(), <br />
       emailVerified: currentUser.emailVerified?.toISOString(), <br />
     }
+
+ - import qs from 'query-string' : 검색해볼것 <br />
+ let currentQuery = qs.parse(params.toString()) <br />
