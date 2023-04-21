@@ -43,4 +43,17 @@ getCurrentUser.ts 파일에서 아래처럼 return 해준다.
     }
 
  - import qs from 'query-string' : 검색해볼것 <br />
- let currentQuery = qs.parse(params.toString()) <br />
+ex) https://example.com/search?q=apple&page=2&category=fruit <br />
+const qeury = qs.parse(q=apple&page=2&category=fruit) <br />
+console.log(qeury) <br />
+결과값 : { q: 'apple', page: '2', category: 'fruit' } <br />
+<br />
+반대로  <br />
+const query = { <br />
+  q: 'apple', <br />
+  page: '2', <br />
+  category: 'fruit' <br />
+};<br />
+const queryString = qs.stringify(query); <br />
+console.log(queryString); <br />
+결과값 "q=apple&page=2&category=fruit" <br />
