@@ -62,11 +62,11 @@ console.log(queryString); <br />
 - import { FieldValues, useForm } from 'react-hook-form' <br />
 const { register, handleSubmit, setValue, watch, formState: { errors }, reset, } = useForm<FieldValues>({}) <br />
 에서 <br />
-register 함수는 input 요소의 name 속성을 사용하여 해당 필드를 등록합니다.  <br />
-handleSubmit 함수는 폼 제출 이벤트를 처리하며, 인수로 onSubmit 함수를 전달합니다. <br />
-watch는 특정 input 요소의 값 변화를 감지하는 역할을 합니다. 예를 들어, 폼에 입력한 값을 실시간으로 반영해야 할 때 유용하게 사용됩니다.<br />
+**register**  함수는 input 요소의 name 속성을 사용하여 해당 필드를 등록합니다.  <br />
+**handleSubmit** 함수는 폼 제출 이벤트를 처리하며, 인수로 onSubmit 함수를 전달합니다. <br />
+**watch** 는 특정 input 요소의 값 변화를 감지하는 역할을 합니다. 예를 들어, 폼에 입력한 값을 실시간으로 반영해야 할 때 유용하게 사용됩니다.<br />
 watch 함수는 사용하려는 input 요소의 이름을 전달받아 해당 input 요소의 값을 반환합니다. 예를 들어, watch("email")<br />
-setValue는 폼 필드의 값을 변경하는 데 사용됩니다. 사용자 입력에 따라 동적으로 폼 필드 값을 변경해야 할 때 사용됩니다. <br />
+**setValue** 는 폼 필드의 값을 변경하는 데 사용됩니다. 사용자 입력에 따라 동적으로 폼 필드 값을 변경해야 할 때 사용됩니다. <br />
 setValue('firstName', 'John') <br />
 <input type="text" {...register('firstName')} /> <br />
 firstName 필드의 값을 John으로 변경합니다. <br />
