@@ -6,15 +6,17 @@ import { FcGoogle } from 'react-icons/fc'
 import { useCallback, useState } from 'react'
 import { FieldValues, SubmitHandler, useForm } from 'react-hook-form'
 import { useRegisterModal } from '@/hooks/useRegisterModal'
-import Modal from './Modal'
-import Heading from '../Heading'
-import Input from '../inputs/input'
+import { useLoginModal } from '@/hooks/useLoginModal'
 import { toast } from 'react-hot-toast'
-import Button from '../Button'
 import { signIn } from 'next-auth/react'
+import Heading from '../Heading'
+import Modal from './Modal'
+import Button from '../Button'
+import Input from '../inputs/input'
 
 export default function RegisterModal() {
   const registerModal = useRegisterModal()
+  const loginMoal = useLoginModal()
   const [isLoading, setIsLoading] = useState(false)
 
   const {
@@ -44,6 +46,11 @@ export default function RegisterModal() {
         setIsLoading(false)
       })
   }
+
+  const toggle = useCallback(() => {
+    registerModal.onClose()
+    loginMoal.onOpen()
+  }, [loginMoal, registerModal])
 
   const bodyContent = (
     <div className="flex flex-col gap-4">
@@ -95,7 +102,7 @@ export default function RegisterModal() {
         <div className="justify-center flex flex-row items-center gap-2">
           <div>Already have an account?</div>
           <div
-            onClick={registerModal.onClose}
+            onClick={toggle}
             className="text-neutral-800 cursor-pointer hover:underline"
           >
             Login in

@@ -2,9 +2,10 @@ import { Nunito } from 'next/font/google'
 
 import './globals.css'
 import Narbar from '@/components/navbar/Narbar'
-import RegisterModal from '@/components/modals/RegisterModal'
 import ToasterProvider from '@/providers/ToasterProvider'
+import RegisterModal from '@/components/modals/RegisterModal'
 import LoginModal from '@/components/modals/LoginModal'
+import RentModal from '@/components/modals/RentModal'
 import getCurrentUser from '@/actions/getCurrentUser'
 
 export const metadata = {
@@ -29,6 +30,7 @@ export default async function RootLayout({
         <ToasterProvider />
         <LoginModal />
         <RegisterModal />
+        <RentModal />
         <Narbar currentUser={currentUser} /> {children}
       </body>
     </html>
