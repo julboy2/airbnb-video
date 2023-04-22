@@ -57,3 +57,13 @@ const query = { <br />
 const queryString = qs.stringify(query); <br />
 console.log(queryString); <br />
 결과값 "q=apple&page=2&category=fruit" <br />
+<br />
+
+- import { FieldValues, useForm } from 'react-hook-form' <br />
+const { register, handleSubmit, setValue, watch, formState: { errors }, reset, } = useForm<FieldValues>({}) <br />
+에서 <br />
+register 함수는 input 요소의 name 속성을 사용하여 해당 필드를 등록합니다.  <br />
+handleSubmit 함수는 폼 제출 이벤트를 처리하며, 인수로 onSubmit 함수를 전달합니다. <br />
+watch는 특정 input 요소의 값 변화를 감지하는 역할을 합니다. 예를 들어, 폼에 입력한 값을 실시간으로 반영해야 할 때 유용하게 사용됩니다.<br />
+watch 함수는 사용하려는 input 요소의 이름을 전달받아 해당 input 요소의 값을 반환합니다. 예를 들어, watch("email")<br />
+    
