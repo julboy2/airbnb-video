@@ -36,7 +36,7 @@ export default function CountrySelect({ value, onChange }: CountrySelectProps) {
             </div>
           </div>
         )}
-        className={{
+        classNames={{
           control: () => 'p-3 border-2',
           input: () => 'text-lg',
           option: () => 'text-lg',

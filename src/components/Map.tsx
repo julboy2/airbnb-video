@@ -21,5 +21,12 @@ type MapProps = {
 }
 
 export default function Map({ center }: MapProps) {
-  return <MapContainer></MapContainer>
+  return (
+    <MapContainer
+      center={(center as L.LatLngExpression) || [51, -0.9]}
+      zoom={center ? 4 : 2}
+      scrollWheelZoom={false}
+      className="h-[35vh] rounded-lg"
+    ></MapContainer>
+  )
 }
