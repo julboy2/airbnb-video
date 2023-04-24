@@ -1,6 +1,6 @@
 https://www.youtube.com/watch?v=c_-b_isI4vg <br />
 youtube 에어비앤비 클론코딩 <br />
-2:56:30 
+4:43:00 
 <br />
 
 ### hydration error 현재버전의 (13) app 폴더가 재대로 동작하지 않는것 같음 <br />
