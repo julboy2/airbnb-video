@@ -71,3 +71,13 @@ setValue('firstName', 'John') <br />
 <input type="text" {...register('firstName')} /> <br />
 firstName 필드의 값을 John으로 변경합니다. <br />
     
+<br />
+ - import { MapContainer, Marker, TileLayer } from 'react-leaflet' 쓸경우 <br />
+서버에서 사용할 react-leaflet 을 use client 페이지에서 사용하려고 하면 에러가난다.<br />
+그럴때는 **dynamic ** 을 써서 ssr :  false 준다.   <br />
+  const Map = useMemo( <br />
+    () => dynamic(() => import('../Map'), { ssr: false }), <br />
+    [location] <br />
+  ) <br />
+<br />
+<br />
