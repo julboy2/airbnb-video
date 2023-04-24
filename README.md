@@ -79,5 +79,6 @@ firstName 필드의 값을 John으로 변경합니다. <br />
     () => dynamic(() => import('../Map'), { ssr: false }), <br />
     [location] <br />
   ) <br />
+참조 :   https://react-leaflet.js.org/
 <br />
 <br />
