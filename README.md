@@ -72,7 +72,7 @@ setValue('firstName', 'John') <br />
 firstName 필드의 값을 John으로 변경합니다. <br />
     
 <br />
-- import { MapContainer, Marker, TileLayer } from 'react-leaflet' 쓸경우 <br />
+ - import { MapContainer, Marker, TileLayer } from 'react-leaflet' 쓸경우 <br />
 서버에서 사용할 react-leaflet 을 use client 페이지에서 사용하려고 하면 에러가난다.<br />
 그럴때는 **dynamic 을 써줘야됨**<br />
   const Map = useMemo( <br />
