@@ -31,7 +31,8 @@ export default async function RootLayout({
         <LoginModal />
         <RegisterModal />
         <RentModal />
-        <Narbar currentUser={currentUser} /> {children}
+        <Narbar currentUser={currentUser} />
+        <div className="pb-20 pt-28">{children}</div>
       </body>
     </html>
   )

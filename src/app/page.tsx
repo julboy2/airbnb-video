@@ -1,3 +1,41 @@
-export default function Home() {
-  return <div className="text-rose-500 text-2xl">Hello Airbnb!</div>
+import GetListings from '@/actions/getListings'
+import ClientOnly from '../components/ClientOnly'
+import Container from '../components/Container'
+import EmptyState from '../components/EmptyState'
+import ListingCard from '@/components/listings/ListingCard'
+
+export default async function Home() {
+  const listings = await GetListings()
+
+  if (listings.length === 0) {
+    // Hydration error 면 ClientOnly 로  내용들 감싸줄것
+    // <ClientOnly>
+    //</ClientOnly>
+    return <EmptyState showRest />
+  }
+
+  return (
+    <Container>
+      <div
+        className="
+        pt-24
+        grid
+        grid-cols-1
+        sm:grid-cols-2
+        md:grid-cols-3
+        lg:grid-cols-4
+        xl:grid-cols-5
+        2xl:grid-cols-6
+        gap-8
+      "
+      >
+        {listings.map((listing) => (
+          <ListingCard key={listing.id} data={listing} />
+        ))}
+      </div>
+    </Container>
+  )
+  // Hydration error 면 ClientOnly 로  내용들 감싸줄것
+  // <ClientOnly>
+  //</ClientOnly>
 }
