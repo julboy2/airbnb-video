@@ -3,9 +3,11 @@ import ClientOnly from '../components/ClientOnly'
 import Container from '../components/Container'
 import EmptyState from '../components/EmptyState'
 import ListingCard from '@/components/listings/ListingCard'
+import getCurrentUser from '@/actions/getCurrentUser'
 
 export default async function Home() {
   const listings = await GetListings()
+  const currentUser = await getCurrentUser()
 
   if (listings.length === 0) {
     // Hydration error 면 ClientOnly 로  내용들 감싸줄것
@@ -30,7 +32,11 @@ export default async function Home() {
       "
       >
         {listings.map((listing) => (
-          <ListingCard key={listing.id} data={listing} />
+          <ListingCard
+            currentUser={currentUser}
+            key={listing.id}
+            data={listing}
+          />
         ))}
       </div>
     </Container>
