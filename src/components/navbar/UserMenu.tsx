@@ -10,12 +10,14 @@ import { useRentModal } from '@/hooks/useRentModal'
 import Avatar from '../Avatar'
 import MenuItem from './MenuItem'
 import { SafeUser } from '@/types'
+import { useRouter } from 'next/navigation'
 
 type Props = {
   currentUser?: SafeUser | null
 }
 
 export default function UserMenu({ currentUser }: Props) {
+  const router = useRouter()
   const registerModal = useRegisterModal()
   const loginModal = useLoginModal()
   const rentModal = useRentModal()
@@ -57,7 +59,10 @@ export default function UserMenu({ currentUser }: Props) {
           <div className="flex flex-col cursor-pointer">
             {currentUser ? (
               <>
-                <MenuItem onClick={() => {}} label="My trips" />
+                <MenuItem
+                  onClick={() => router.push('/trips')}
+                  label="My trips"
+                />
                 <MenuItem onClick={() => {}} label="My favorites" />
                 <MenuItem onClick={() => {}} label="My reservations" />
                 <MenuItem onClick={() => {}} label="My properties" />
