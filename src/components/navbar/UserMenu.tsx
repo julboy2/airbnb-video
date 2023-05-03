@@ -24,7 +24,7 @@ export default function UserMenu({ currentUser }: Props) {
   const [isOpen, setIsOpen] = useState(false)
 
   const toggleOpen = useCallback(() => {
-    setIsOpen(!isOpen)
+    setIsOpen((prev) => !prev)
   }, [])
 
   const onRent = useCallback(() => {
@@ -64,7 +64,10 @@ export default function UserMenu({ currentUser }: Props) {
                   label="My trips"
                 />
                 <MenuItem onClick={() => {}} label="My favorites" />
-                <MenuItem onClick={() => {}} label="My reservations" />
+                <MenuItem
+                  onClick={() => router.push('/reservations')}
+                  label="My reservations"
+                />
                 <MenuItem onClick={() => {}} label="My properties" />
                 <MenuItem onClick={rentModal.onOpen} label="Airbnb my home" />
                 <hr />
