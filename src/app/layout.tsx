@@ -7,6 +7,7 @@ import RegisterModal from '@/components/modals/RegisterModal'
 import LoginModal from '@/components/modals/LoginModal'
 import RentModal from '@/components/modals/RentModal'
 import getCurrentUser from '@/actions/getCurrentUser'
+import SearchModal from '@/components/modals/SearchModal'
 
 export const metadata = {
   title: 'Airbnb',
@@ -28,6 +29,7 @@ export default async function RootLayout({
       <body className={font.className}>
         {/* 만약 hydration error 에러가 난다면 ClientOnly 로 감싸줄것 */}
         <ToasterProvider />
+        <SearchModal />
         <LoginModal />
         <RegisterModal />
         <RentModal />
