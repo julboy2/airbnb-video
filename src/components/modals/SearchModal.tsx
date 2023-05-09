@@ -1,10 +1,13 @@
 'use client'
 
+import qa from 'query-string'
 import { useSearchModal } from '@/hooks/useSearchModal'
 import Modal from './Modal'
 import { useRouter, useSearchParams } from 'next/navigation'
-import { useState } from 'react'
+import { useCallback, useMemo, useState } from 'react'
 import { Range } from 'react-date-range'
+import { CountrySelectValue } from '../inputs/CountrySelect'
+import dynamic from 'next/dynamic'
 
 enum STEPS {
   LOCATION = 0,
@@ -15,8 +18,9 @@ enum STEPS {
 export default function SearchModal() {
   const router = useRouter()
   const params = useSearchParams()
-
   const searchModal = useSearchModal()
+
+  const [location, setLocation] = useState<CountrySelectValue>()
   const [step, setStep] = useState(STEPS.LOCATION)
   const [guestCount, setGuestCount] = useState(1)
   const [roomCount, setRoomCount] = useState(1)
@@ -26,6 +30,22 @@ export default function SearchModal() {
     endDate: new Date(),
     key: 'selection',
   })
+
+  const Map = useMemo(
+    () =>
+      dynamic(() => import('../Map'), {
+        ssr: false,
+      }),
+    [location]
+  )
+
+  const onBack = useCallback(() => {
+    setStep((value) => value - 1)
+  }, [])
+
+  const onNext = useCallback(() => {
+    setStep((value) => value + 1)
+  }, [])
 
   return (
     <Modal
